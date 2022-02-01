@@ -16,4 +16,4 @@ Company needs documentation that salarized employees did not get overtime each w
 - Needs to be documented if employees did not log  overtime
 
 ## UI
-Bootstrap -> formatting
+- Bootstrap -> formatting
