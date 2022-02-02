@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 describe 'navigate' do
+  # Before doing all the test I am using Warden to make the app log in
+  before do
+      user = User.create(
+        email: 'test@test.com',
+        password: '123123',
+        password_confirmation: '123123',
+        first_name: 'Jon',
+        last_name: 'Snow'
+      )
+      login_as(user)
+      visit new_post_path
+  end
   describe 'index' do
     it 'can be reached successfully' do
       visit posts_path
@@ -15,19 +27,23 @@ describe 'navigate' do
 
   describe 'creation' do
     it 'has a new page that can be reached' do
-      visit new_post_path
       expect(page.status_code).to eq(200)
     end
 
-    # it 'can be created from new form page' do
-    #   visit new_post_path
+    it 'can be created from new form page' do
+      fill_in 'post[date]', with: Date.today
+      fill_in 'post[rationale]', with: 'Some rationale'
+      click_on 'Save'
 
-    #   fill_in 'post_date', with: Date.today
-    #   fill_in 'date', with: 'Some rationale'
+      expect(page).to have_content('Some rationale')
+    end
 
-    #   click_on 'save'
+    it 'will have a user associated with it' do
+      fill_in 'post[date]', with: Date.today
+      fill_in 'post[rationale]', with: "User Assotiation"
+      click_on 'Save'
 
-    #   expect(page).to have_content('Some rationale')
-    # end
+      expect(User.last.posts.last.rationale).to eq("User Assotiation")
+    end
   end
 end
