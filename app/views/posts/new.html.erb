@@ -1,9 +1,7 @@
 <h1>Create a new post:</h1>
 
-<%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
-
-  <%= f.input :date, as: :date %>
+<%= form_for @post do |f| %>
+  <%= f.date_field :date %>
   <%= f.text_area :rationale %>
-  <%= f.submit 'save' %>
+  <%= f.submit 'Save' %>
 <% end %>

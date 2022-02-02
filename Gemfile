@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'sdoc'
+gem 'sdoc', '~> 2.3'
 gem 'coffee-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -60,3 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'simple_form', '~> 5.1'
+gem 'json', '~> 2.6', '>= 2.6.1'
