@@ -3,3 +3,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+//External imports
+import "bootstrap";
