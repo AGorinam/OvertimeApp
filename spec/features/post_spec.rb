@@ -3,13 +3,7 @@ require 'rails_helper'
 describe 'navigate' do
   # Before doing all the test I am using Warden to make the app log in
   before do
-    @user = User.create(
-      email: 'test@test.com',
-      password: '123123',
-      password_confirmation: '123123',
-      first_name: 'Jon',
-      last_name: 'Snow'
-    )
+    @user = FactoryGirl.create(:user)
     login_as(@user, scope: :user)
     visit new_post_path
   end
@@ -26,10 +20,10 @@ describe 'navigate' do
     end
 
     it 'has a lists of posts' do
-      Post.create!(date: Date.today, rationale: 'Post1', user_id: @user.id)
-      Post.create!(date: Date.today, rationale: 'Post2', user_id: @user.id)
+      FactoryGirl.create(:post)
+      FactoryGirl.create(:second_post)
       visit posts_path
-      expect(page).to have_content(/Post1|Post2/)
+      expect(page).to have_content(/rationale|content/)
     end
   end
 

@@ -108,6 +108,11 @@ GEM
     diff-lcs (1.5.0)
     erubi (1.10.0)
     execjs (2.8.1)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -275,6 +280,7 @@ DEPENDENCIES
   coffee-rails
   database_cleaner
   devise (~> 4.8, >= 4.8.1)
+  factory_girl_rails (~> 4.9)
   jbuilder (~> 2.7)
   jquery-rails
   json (~> 2.6, >= 2.6.1)
