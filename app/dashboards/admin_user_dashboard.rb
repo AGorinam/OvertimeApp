@@ -32,7 +32,6 @@ class AdminUserDashboard < Administrate::BaseDashboard
     posts
     id
     email
-    encrypted_password
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
