@@ -64,3 +64,6 @@ gem 'simple_form', '~> 5.1'
 gem 'json', '~> 2.6', '>= 2.6.1'
 gem 'bootstrap', '~> 4.6'
 gem 'jquery-rails'
+
+gem 'administrate', '~> 0.17.0'
+gem 'bourbon', '~> 7.2'
